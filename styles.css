@@ -1,0 +1,344 @@
+/* Variables de color para modo claro */
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f3f7;
+  --text: #15171a;
+  --muted: #5f6672;
+  --border: #dfe3ea;
+  --accent: #4f46e5;
+  --accent-contrast: #ffffff;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  --radius: 16px;
+}
+
+/* Modo oscuro automático si el sistema lo pide y no hay tema guardado */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216;
+    --surface: #171b22;
+    --surface-2: #1f242d;
+    --text: #f3f4f6;
+    --muted: #a8b0bd;
+    --border: #2a313c;
+    --accent: #8b5cf6;
+    --accent-contrast: #ffffff;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Modo oscuro manual */
+[data-theme="dark"] {
+  --bg: #0f1216;
+  --surface: #171b22;
+  --surface-2: #1f242d;
+  --text: #f3f4f6;
+  --muted: #a8b0bd;
+  --border: #2a313c;
+  --accent: #8b5cf6;
+  --accent-contrast: #ffffff;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Modo claro manual */
+[data-theme="light"] {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #f1f3f7;
+  --text: #15171a;
+  --muted: #5f6672;
+  --border: #dfe3ea;
+  --accent: #4f46e5;
+  --accent-contrast: #ffffff;
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* Reset simple */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Contenedor principal */
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Cabecera */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  margin-right: auto;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.brand-tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: var(--surface-2);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+/* Secciones */
+.section {
+  padding: 3rem 0;
+}
+
+.section.alt {
+  background: var(--surface-2);
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Rejilla de tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Tarjetas */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+/* Estado vacío */
+.empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 180px;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.empty-text {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* Soporte */
+.support-card {
+  display: grid;
+  gap: 1rem;
+  max-width: 700px;
+}
+
+.support-card h3 {
+  margin: 0;
+}
+
+.support-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.email-link {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.email-link:hover,
+.email-link:focus-visible {
+  text-decoration: underline;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Pie de página */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 1.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  color: var(--muted);
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-inner a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-inner a:hover,
+.footer-inner a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Animación de aparición al hacer scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Foco accesible */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Respeta la reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Ajustes móviles */
+@media (max-width: 600px) {
+  .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.45rem;
+  }
+
+  .theme-label {
+    display: none;
+  }
+}

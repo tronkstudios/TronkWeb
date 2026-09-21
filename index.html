@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TronkStudios - juegos, desarrollos en curso y juegos Roblox." />
+  <title>TronkStudios</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Cabecera principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Nombre de la marca -->
+      <div class="brand">
+        <h1 class="brand-name">TronkStudios</h1>
+        <p class="brand-tagline">Juegos, creatividad y desarrollo</p>
+      </div>
+
+      <!-- Navegación principal -->
+      <nav aria-label="Navegación principal" class="main-nav">
+        <a href="#juegos">Nuestros Juegos</a>
+        <a href="#desarrollo">En desarrollo</a>
+        <a href="#roblox">Roblox</a>
+        <a href="#soporte">Soporte</a>
+      </nav>
+
+      <!-- Botón para cambiar modo claro/oscuro -->
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambiar tema">
+        <span class="theme-icon" aria-hidden="true">🌙</span>
+        <span class="theme-label">Oscuro</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección: Nuestros Juegos -->
+    <section id="juegos" class="section" aria-labelledby="juegos-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="juegos-title">Nuestros Juegos</h2>
+        </div>
+
+        <div class="grid">
+          <!-- Estado vacío -->
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">🎮</span>
+            <p class="empty-text">No hay nada todavía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Juegos en desarrollo -->
+    <section id="desarrollo" class="section alt" aria-labelledby="desarrollo-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="desarrollo-title">Juegos en desarrollo</h2>
+        </div>
+
+        <div class="grid">
+          <!-- Estado vacío -->
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">🛠️</span>
+            <p class="empty-text">No hay nada todavía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Juegos Roblox -->
+    <section id="roblox" class="section" aria-labelledby="roblox-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="roblox-title">Juegos Roblox</h2>
+        </div>
+
+        <div class="grid">
+          <!-- Estado vacío -->
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">🧱</span>
+            <p class="empty-text">No hay nada todavía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Soporte -->
+    <section id="soporte" class="section alt" aria-labelledby="soporte-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="soporte-title">Soporte</h2>
+          <p>Envía fallos, dudas o sugerencias por correo.</p>
+        </div>
+
+        <div class="support-card card">
+          <h3>Contacto de soporte</h3>
+          <p>Si encuentras un bug, escríbenos con la mayor información posible.</p>
+          <address>
+            <a class="email-link" href="mailto:tronkstudios7@gmail.com?subject=Soporte%20TronkStudios">
+              tronkstudios7@gmail.com
+            </a>
+          </address>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> TronkStudios</p>
+      <p>
+        Soporte:
+        <a href="mailto:tronkstudios7@gmail.com?subject=Soporte%20TronkStudios">
+          tronkstudios7@gmail.com
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
